@@ -39,5 +39,8 @@ module.exports = StyleSheet.create({
   },
   link: {
     color: navy,
+  },
+  feedback: {
+    textAlign: 'center',
   }
 });

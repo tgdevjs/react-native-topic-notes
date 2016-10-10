@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import {firebaseApp} from './authentication';
 
 import styles from '../../styles';
 
@@ -13,11 +14,28 @@ module.exports = React.createClass({
     return {
       email:'',
       password:'',
+      result:'',
     }
+  },
+  componentDidMount() {
+    firebaseApp.auth().onAuthStateChanged( user => {
+      if (user) {
+        console.log('user',user);
+      }
+    })
+  },
+  signIn() {
+    const {email, password} = this.state;
+    firebaseApp.auth().signInWithEmailAndPassword(email, password)
+      .catch(error => {
+        console.log('error: ',error.message)
+        this.setState({result: error.message});
+      });
   },
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.feedback}>{this.state.result}</Text>
         <TextInput
           placeholder='Email'
           style={styles.input}
@@ -27,8 +45,9 @@ module.exports = React.createClass({
         placeholder='Password'
         style={styles.input}
         onChangeText={(text) => this.setState({password: text})}
+        secureTextEntry={true}
       />
-      <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={styles.button} onPress={() => this.signIn()}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
       <View style={styles.links}>
