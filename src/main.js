@@ -3,10 +3,12 @@ import {
   Navigator
 } from 'react-native';
 
-import SignIn from './components/auth/signIn';
+import signIn from './components/auth/signIn';
+import signUp from './components/auth/signUp';
 
 const routes = {
-  signIn: SignIn
+  signIn,
+  signUp,
 };
 
 module.exports = React.createClass({
