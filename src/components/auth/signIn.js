@@ -20,7 +20,8 @@ module.exports = React.createClass({
   componentDidMount() {
     firebaseApp.auth().onAuthStateChanged( user => {
       if (user) {
-        console.log('user',user);
+        console.log('componentDidMount user',user);
+        this.props.navigator.push({name:'topics'});
       }
     })
   },

@@ -42,5 +42,24 @@ module.exports = StyleSheet.create({
   },
   feedback: {
     textAlign: 'center',
+  },
+
+  // topics section
+  topics: {
+    flex: 1,
+    backgroundColor: blue,
+  },
+  header: {
+    marginTop: 20,
+    padding: 10,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  body: {
+    flex: 24
+  },
+  title: {
+    textAlign: 'center',
   }
 });

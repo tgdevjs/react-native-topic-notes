@@ -5,10 +5,14 @@ import {
 
 import signIn from './components/auth/signIn';
 import signUp from './components/auth/signUp';
+import chooseName from './components/auth/chooseName';
+import topics from './components/topics';
 
 const routes = {
   signIn,
   signUp,
+  topics,
+  chooseName,
 };
 
 module.exports = React.createClass({
