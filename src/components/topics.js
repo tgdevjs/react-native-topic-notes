@@ -43,6 +43,12 @@ module.exports = React.createClass({
       this.setState({dataSource: ds.cloneWithRows(topics)});
     })
   },
+  addTopic() {
+    topicsRef.push({
+      title: this.state.title,
+      author: this.state.displayName
+    });
+  },
   signOut() {
     // Sign out the user
     firebaseApp.auth().signOut()
@@ -83,6 +89,7 @@ module.exports = React.createClass({
             placeholder='Something on your mind?'
             style={styles.input}
             onChangeText={(text) => this.setState({title: text})}
+            onEndEditing={() => this.addTopic()}
           />
         <ListView
           style={styles.list}
