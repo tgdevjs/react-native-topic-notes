@@ -4,6 +4,7 @@ const blue = '#90caf9';
 const navy = '#1a237e';
 const white = '#fff';
 const black = '#000';
+const grey = '#777'
 
 module.exports = StyleSheet.create({
   container: {
@@ -91,5 +92,8 @@ module.exports = StyleSheet.create({
   detailSubtitle: {
     textAlign: 'center',
     fontSize: 14,
+  },
+  comment: {
+    color: grey,
   }
 });
