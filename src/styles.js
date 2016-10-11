@@ -44,8 +44,8 @@ module.exports = StyleSheet.create({
     textAlign: 'center',
   },
 
-  // topics section
-  topics: {
+  // Topics section
+  flexContainer: {
     flex: 1,
     backgroundColor: blue,
   },
@@ -65,7 +65,7 @@ module.exports = StyleSheet.create({
     textAlign: 'center',
   },
 
-  // list section
+  // List section
   list: {
     flex: 1
   },
@@ -80,5 +80,16 @@ module.exports = StyleSheet.create({
   },
   rowTitle: {
     fontWeight: 'bold',
+  },
+
+  // Details section
+  detailTitle: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  detailSubtitle: {
+    textAlign: 'center',
+    fontSize: 14,
   }
 });
