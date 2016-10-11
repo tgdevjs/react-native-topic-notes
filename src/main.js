@@ -8,12 +8,14 @@ import signUp from './components/auth/signUp';
 import chooseName from './components/auth/chooseName';
 import topics from './components/topics';
 import topicDetail from './components/topicDetail';
+import forgotPassword from './components/auth/forgotPassword';
 
 const routes = {
   signIn,
   signUp,
-  topics,
   chooseName,
+  forgotPassword,
+  topics,
   topicDetail,
 };
 
